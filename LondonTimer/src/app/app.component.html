@@ -1,0 +1,21 @@
+
+<div class="content">
+    <h3>{{ title }}</h3>
+    <span *ngIf="!auth_hour" (click)="stop_hour()" >{{("00"+hour).slice(-2)}}</span>
+    <input type="number" *ngIf="auth_hour" [(ngModel)]="hour"> :
+
+    <span *ngIf="!auth_minute" (click)="stop_minute()">{{("00"+minute).slice(-2)}}</span>
+    <input type="number" *ngIf="auth_minute" [(ngModel)]="minute"> :
+
+    <span *ngIf="!auth_second" (click)="stop_second()">{{("00"+second).slice(-2)}}</span>
+    <input type="number" *ngIf="auth_second" [(ngModel)]="second">
+
+    <span *ngIf="!auth_day" (click)="stop_day()"> {{day}}</span>
+    <input type="text" *ngIf="auth_day" [(ngModel)]="day">
+
+    <br>
+    <br>
+
+    <button *ngIf="auth_enter" type="button" name="button" (click)="enter()">Enter</button>
+    <br>
+</div>
